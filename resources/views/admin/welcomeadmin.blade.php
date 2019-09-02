@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{asset('css/mine.css')}}">
+        <link rel="stylesheet" href="{{asset('css/admin.css')}}">
 
 
     </head>
@@ -19,13 +19,13 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/admin') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('admin.login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
+{{--                        @if (Route::has('admin/register'))--}}
+                            <a href="{{ route('admin.register') }}">register</a>
+{{--                        @endif--}}
                     @endauth
                 </div>
             @endif
@@ -37,11 +37,11 @@
                     </div>
                     <div class="text-box">
                         <h1 class="heading-primary">
-                            <span class="heading-primary-main">MYWORK 1</span>
+                            <span class="heading-primary-main">MYWORK 2</span>
                             <span class="heading-primary-sub">Work With No Limits</span>
                         </h1>
 
-                        <a href="{{route('admin.homes')}}" class="btn btn-white">Admin</a>
+                        <a href="{{url('/')}}" class="btn btn-white">User</a>
                     </div>
                 </header>
             </div>
