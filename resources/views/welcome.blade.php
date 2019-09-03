@@ -41,7 +41,7 @@
                             <span class="heading-primary-sub">Work With No Limits</span>
                         </h1>
 
-                        <a href="{{route('admin.homes')}}" class="btn btn-white">Admin</a>
+                        <a href="{{route('admin.home')}}" class="btn btn-white">Admin</a>
                     </div>
                 </header>
             </div>
