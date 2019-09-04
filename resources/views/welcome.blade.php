@@ -37,11 +37,11 @@
                     </div>
                     <div class="text-box">
                         <h1 class="heading-primary">
-                            <span class="heading-primary-main">MYWORK</span>
+                            <span class="heading-primary-main">MYWORK 1</span>
                             <span class="heading-primary-sub">Work With No Limits</span>
                         </h1>
 
-                        <a href="#" class="btn btn-white">Discover Me</a>
+                        <a href="{{route('admin.home')}}" class="btn btn-white">Admin</a>
                     </div>
                 </header>
             </div>
