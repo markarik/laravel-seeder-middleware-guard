@@ -1,6 +1,6 @@
 
 @section('css')
-    <link rel="stylesheet" type="text/css" href="{{asset('DataTables/datatables.min.css')}}"/>
+{{--    <link rel="stylesheet" type="text/css" href="{{asset('DataTables/datatables.min.css')}}"/>--}}
 
 @endsection
 
@@ -115,13 +115,3 @@
             </div>
         </div>
     </div>
-
-@section('js')
-    <script type="text/javascript" src="{{asset('DataTables/datatables.min.js')}}"></script>
-
-    <script>
-        $(document).ready( function () {
-            $('#dataTable').DataTable();
-        } );
-    </script>
-@endsection
