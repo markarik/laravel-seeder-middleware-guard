@@ -33,11 +33,6 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function showLoginForm()
-
-    {
-        return view('authadmin.login');
-    }
 
     protected function guard()
     {

@@ -11,24 +11,32 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Auth::routes(['verify'=>true]);
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/admin', 'AdminController@index')->name('admin.home');
 
-Route::get('/admin','AdminController@index')->name('admin.home');
-Route::get('/admins','AuthAdmin\RegisterController@send')->name('admin.send');
-Route::get('/admin/login','AuthAdmin\LoginController@showLoginForm')->name('admin.login');
-Route::post('/admin/login/submit','AuthAdmin\LoginController@login')->name('admin.login.submit');
-Route::get('/admin/register','AuthAdmin\RegisterController@index')->name('admin.register');
-Route::get('admin/dashboard','AdminController@create')->name('admin.dashboard');
+Route::get('/dashboard', 'AdminController@create')->name('dashboard');
+
+Route::prefix('admin')->name('admin.')->namespace('AuthAdmin')->group(function () {
 
 
-Route::post('/admin/register','AuthAdmin\RegisterController@store')->name('admin.register.store');
+    Route::get('/admins', 'RegisterController@send')->name('send');
+    Route::get('/login', 'AdminLoginController@showLoginForm')->name('login');
+    Route::post('/login', 'AdminLoginController@login')->name('login.submit');
+    Route::get('/register', 'RegisterController@index')->name('register');
+    Route::post('/register', 'RegisterController@store')->name('register.store');
+
+
+});
+
+
 
 
 
