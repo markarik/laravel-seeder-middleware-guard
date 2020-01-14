@@ -110,13 +110,13 @@ class RegisterController extends Controller
 
     }
 
-    public function send()
-    {
-        Mail::send(['text'=>'authadmin.email.email2'],['name',''],function ($message){
-            $message -> to('kariukimarkg@yahoo.com','To Admin')->subject('Test Email');
-            $message->from('markgichohi24@gmail.com', 'Markariks');
-        });
-    }
+    // public function send()
+    // {
+    //     Mail::send(['text'=>'authadmin.email.email2'],['name',''],function ($message){
+    //         $message -> to('kariukimarkg@yahoo.com','To Admin')->subject('Test Email');
+    //         $message->from('markgichohi24@gmail.com', 'Markariks');
+    //     });
+    // }
 
     /**
      * Create a new user instance after a valid registration.
@@ -137,6 +137,7 @@ class RegisterController extends Controller
 
 
     function generatePassword($length = 8) {
+        
         $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $count = mb_strlen($chars);
 
